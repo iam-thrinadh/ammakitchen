@@ -1,31 +1,39 @@
 version: "3"
 services:
-  nanna: 
-     build: nanna/
-     ports:
-       - "8081:80"
-     volume:
-       - "nanna-volume"
-     network:
-       - "nanna-network"
+  nanna:
+    build: nanna/
+    ports:
+      - "8081:80"
+    volumes:
+      - "nanna-volume"
+    networks:
+      - "nanna-network"
 
- 
-  akka: 
-     build: akka/
-     ports:
-       - "8083:80"
-     volume:
-       - "akka-volume"
-     network:
-       - "akka-network"
+  akka:
+    build: akka/
+    ports:
+      - "8083:80"
+    volumes:
+      - "akka-volume"
+    networks:
+      - "akka-network"
 
   pandu:
-     build: pandu/
-     ports:
-       - "8084:80"
-     volume:
-       - "pandu-volume"
-     network:
-       - "pandu-network"
+    build: pandu/
+    ports:
+      - "8084:80"
+    volumes:
+      - "pandu-volume"
+    networks:
+      - "pandu-network"
 
+networks:
+  nanna-network:
+    driver: bridge
+
+  akka-network:
+    driver: bridge
+
+  pandu-network:
+    driver: bridge
 
