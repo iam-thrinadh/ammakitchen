@@ -23,9 +23,11 @@ services:
     ports:
       - "8084:80"
     volumes:
-      - "pandu-volume"
+      - "pandu-volume:/usr/share/nginx/html"
     networks:
       - "pandu-network"
+volumes:
+  pandu-volume:
 
 networks:
   nanna-network:
